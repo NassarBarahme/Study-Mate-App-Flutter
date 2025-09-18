@@ -255,9 +255,9 @@ class _CalendarPageState extends State<CalendarPage> {
                   ),
                   Expanded(
                     child: Align(
-                      alignment: Alignment.centerLeft, // يخلي الزر أقرب للشمال
+                      alignment: Alignment.centerLeft,
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 24), // زحزحة بسيطة
+                        padding: const EdgeInsets.only(left: 24),
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),

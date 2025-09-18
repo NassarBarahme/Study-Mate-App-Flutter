@@ -46,7 +46,7 @@ class MaterialsPage extends StatelessWidget {
   }
 }
 
-/// 🔹 ويدجت خاصة بالكروت عشان الكود يكون أنظف
+
 class MaterialCard extends StatelessWidget {
   final IconData icon;
   final Color color;
@@ -69,7 +69,7 @@ class MaterialCard extends StatelessWidget {
         leading: Container(
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
-            color: color.withOpacity(0.15), // 🔹 خلفية فاتحة بنفس لون الأيقونة
+            color: color.withOpacity(0.15),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Icon(icon, color: color, size: 28),

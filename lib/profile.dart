@@ -5,7 +5,7 @@ import 'dart:io';
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
-  static const _primary = Colors.teal; // 🔹 نفس اللون الأساسي اللي عندك في Home
+  static const _primary = Colors.teal;
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +20,10 @@ class ProfilePage extends StatelessWidget {
             children: [
               const SizedBox(height: 20),
 
-              // صورة دائرية
+
               CircleAvatar(
                 radius: 80,
-                backgroundColor: Colors.teal.shade100, // خلفية أنعم
+                backgroundColor: Colors.teal.shade100,
                 child: ClipOval(
                   child: Image.asset(
                     'image/76d79a84-36ef-447d-b8b1-567e4fd3cb2d.png',

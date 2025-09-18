@@ -85,7 +85,7 @@ class _AddEventState extends State<AddEvent> {
                   focusedBorder: _focusedBorder(),
                   prefixIcon: const Icon(Icons.menu_book, color: _primaryColor),
                 ),
-                // هذا الحقل اختياري، فلا validator
+
               ),
               const SizedBox(height: 16),
 
@@ -196,14 +196,14 @@ class _AddEventState extends State<AddEvent> {
                       final time = _timeController.text;
                       final title = _titleController.text.trim();
 
-                      // هنا ممكن تحفظ الحدث في قاعدة بيانات أو ترجع النتائج للصفحة السابقة
+
                       debugPrint("Saved event: $title | course: $course | date: $date | time: $time");
 
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Event saved successfully!')),
                       );
 
-                      // optional: العودة للصفحة السابقة
+
                       // Navigator.pop(context, { 'title': title, 'course': course, 'date': date, 'time': time });
                     }
                   },
