@@ -2,7 +2,7 @@
 
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:untitled/main.dart'; // هنا MyApp
+import 'package:untitled/home.dart'; // هنا MyApp
 
 void main() {
   testWidgets('smoke test', (WidgetTester tester) async {
