@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 import 'calendar.dart';
 import 'materials.dart';
 import 'profile.dart';
@@ -27,7 +29,14 @@ class _HomeState extends State<Home> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: "ArefRuqaa",
+        textTheme: GoogleFonts.poppinsTextTheme().apply(
+          bodyColor: Colors.black,
+          displayColor: Colors.black,
+        ).copyWith(
+          headlineLarge: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 26),
+          headlineMedium: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 22),
+          bodyLarge: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 20),
+        ),
         primaryColor: Colors.teal,
         scaffoldBackgroundColor: const Color(0xFFF5F5F5),
         appBarTheme: const AppBarTheme(
@@ -40,21 +49,8 @@ class _HomeState extends State<Home> {
           centerTitle: true,
           elevation: 2,
         ),
-        cardTheme: CardThemeData(
-          color: Colors.white,
-          surfaceTintColor: Colors.transparent,
-          elevation: 3,
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-          ),
-        ),
-        textTheme: const TextTheme(
-          bodyLarge: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.w600, color: Colors.black),
-          bodyMedium: TextStyle(
-              fontSize: 16, fontWeight: FontWeight.w400, color: Colors.grey),
-        ),
       ),
+
       home: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
@@ -67,7 +63,7 @@ class _HomeState extends State<Home> {
           index: _selectedIndex,
           children: _pages,
         ),
-        bottomNavigationBar: CustomBottomNavBar( // ✅ استدعاء الناف بار المفصول
+        bottomNavigationBar: CustomBottomNavBar(
           currentIndex: _selectedIndex,
           onTap: (index) {
             setState(() {
@@ -113,9 +109,9 @@ class HomePageContent extends StatelessWidget {
                       margin: const EdgeInsets.only(top: 20),
                       child: const ListTile(
                         title: Text("Todays",
-                            style: TextStyle(fontSize: 20, color: Colors.lightBlue)),
+                            style: TextStyle(fontSize: 18, color: Colors.lightBlue)),
                         subtitle: Text("2",
-                            style: TextStyle(fontSize: 20, color: Colors.lightBlue)),
+                            style: TextStyle(fontSize: 18, color: Colors.lightBlue)),
                       ),
                     ),
                   ),
@@ -126,7 +122,7 @@ class HomePageContent extends StatelessWidget {
                     child: Card(
                       margin: const EdgeInsets.only(top: 20),
                       child: const ListTile(
-                        title: Text("Weekly Progress",
+                        title: Text("Weekly Progres",
                             style: TextStyle(fontSize: 17, color: Colors.lightBlue)),
                         subtitle: Text("60%",
                             style: TextStyle(fontSize: 20, color: Colors.lightBlue)),
@@ -155,7 +151,7 @@ class HomePageContent extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.only(top: 16, left: 16),
           child: Text("Today's Tasks",
-              style: TextStyle(fontSize: 24, color: Colors.black)),
+              style: TextStyle(fontSize: 26, color: Colors.black)),
         ),
         Card(
           margin: const EdgeInsets.all(16),
@@ -189,7 +185,7 @@ class HomePageContent extends StatelessWidget {
         ),
         const Padding(
           padding: EdgeInsets.only(top: 16, left: 16),
-          child: Text("Upcoming", style: TextStyle(fontSize: 24, color: Colors.black)),
+          child: Text("Upcoming", style: TextStyle(fontSize: 26, color: Colors.black)),
         ),
         Card(
           margin: const EdgeInsets.all(16),
