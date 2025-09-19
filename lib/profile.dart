@@ -26,14 +26,18 @@ class ProfilePage extends StatelessWidget {
                     radius: 70,
                     backgroundColor: Colors.teal.shade100,
                     child: ClipOval(
-                      child: Image.asset(
-                        'image/76d79a84-36ef-447d-b8b1-567e4fd3cb2d.png',
-                        width: 140,
-                        height: 140,
-                        fit: BoxFit.cover,
+                      child: Align(
+                        alignment: const Alignment(0, -10), // نزلنا الصورة كثير
+                        child: Image.asset(
+                          'image/WhatsApp Image 2025-08-16 at 21.59.40_b482b9c9.jpg',
+                          width: 140,
+                          height: 160, // كبرنا شوي لتسهيل القص
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),
+
                   Positioned(
                     bottom: 0,
                     right: 4,

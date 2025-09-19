@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AddEvent extends StatefulWidget {
   const AddEvent({super.key});
@@ -43,7 +44,7 @@ class _AddEventState extends State<AddEvent> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Add Event"),
+        title: Text("Add Event", style: GoogleFonts.openSans(fontWeight: FontWeight.w600)),
         backgroundColor: _primaryColor,
       ),
       body: SingleChildScrollView(
@@ -55,9 +56,12 @@ class _AddEventState extends State<AddEvent> {
               // Event Title
               TextFormField(
                 controller: _titleController,
+                style: GoogleFonts.openSans(fontSize: 16, fontWeight: FontWeight.w600, color: Colors.black87),
                 decoration: InputDecoration(
                   labelText: "Event Title",
+                  labelStyle: GoogleFonts.openSans(fontWeight: FontWeight.w600, color: Colors.grey[700]),
                   hintText: "Enter the title of your event",
+                  hintStyle: GoogleFonts.openSans(color: Colors.grey[400]),
                   border: _defaultBorder(),
                   focusedBorder: _focusedBorder(),
                 ),
@@ -78,14 +82,16 @@ class _AddEventState extends State<AddEvent> {
               // Course Name
               TextFormField(
                 controller: _courseController,
+                style: GoogleFonts.openSans(fontSize: 16, color: Colors.black87),
                 decoration: InputDecoration(
                   labelText: "Course Name",
+                  labelStyle: GoogleFonts.openSans(color: Colors.grey[700]),
                   hintText: "Enter course name (optional)",
+                  hintStyle: GoogleFonts.openSans(color: Colors.grey[400]),
                   border: _defaultBorder(),
                   focusedBorder: _focusedBorder(),
                   prefixIcon: const Icon(Icons.menu_book, color: _primaryColor),
                 ),
-
               ),
               const SizedBox(height: 16),
 
@@ -93,9 +99,12 @@ class _AddEventState extends State<AddEvent> {
               TextFormField(
                 controller: _dateController,
                 readOnly: true,
+                style: GoogleFonts.openSans(fontSize: 16, color: Colors.black87),
                 decoration: InputDecoration(
                   labelText: "Event Date",
+                  labelStyle: GoogleFonts.openSans(color: Colors.grey[700]),
                   hintText: "Select event date",
+                  hintStyle: GoogleFonts.openSans(color: Colors.grey[400]),
                   border: _defaultBorder(),
                   focusedBorder: _focusedBorder(),
                   suffixIcon: const Icon(Icons.calendar_today, color: _primaryColor),
@@ -107,7 +116,6 @@ class _AddEventState extends State<AddEvent> {
                     firstDate: DateTime(2000),
                     lastDate: DateTime(2100),
                     builder: (context, child) {
-                      // small theming so the date picker matches primary color
                       return Theme(
                         data: Theme.of(context).copyWith(
                           colorScheme: ColorScheme.light(primary: _primaryColor),
@@ -137,9 +145,12 @@ class _AddEventState extends State<AddEvent> {
               TextFormField(
                 controller: _timeController,
                 readOnly: true,
+                style: GoogleFonts.openSans(fontSize: 16, color: Colors.black87),
                 decoration: InputDecoration(
                   labelText: "Event Time",
+                  labelStyle: GoogleFonts.openSans(color: Colors.grey[700]),
                   hintText: "Select event time",
+                  hintStyle: GoogleFonts.openSans(color: Colors.grey[400]),
                   border: _defaultBorder(),
                   focusedBorder: _focusedBorder(),
                   suffixIcon: const Icon(Icons.access_time, color: _primaryColor),
@@ -190,12 +201,10 @@ class _AddEventState extends State<AddEvent> {
                   ),
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      // read values
                       final course = _courseController.text.trim();
                       final date = _dateController.text;
                       final time = _timeController.text;
                       final title = _titleController.text.trim();
-
 
                       debugPrint("Saved event: $title | course: $course | date: $date | time: $time");
 
@@ -203,11 +212,10 @@ class _AddEventState extends State<AddEvent> {
                         const SnackBar(content: Text('Event saved successfully!')),
                       );
 
-
                       // Navigator.pop(context, { 'title': title, 'course': course, 'date': date, 'time': time });
                     }
                   },
-                  child: const Text("Save", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+                  child: Text("Save", style: GoogleFonts.openSans(fontSize: 16, fontWeight: FontWeight.w600)),
                 ),
               ),
             ],
